@@ -9,9 +9,13 @@ const Navigation = () => {
   return (
     <footer>
       <span className="nav-icons">
-        <IconContext.Provider value={{ color: 'green', size: 30 }}>
-          <FaPhoneAlt /> <BsFillPersonFill /> <BiDialpadAlt />
-          <MdSettings />
+        <IconContext.Provider
+          value={{ color: '#4CC355', size: 30, style: { cursor: 'pointer' } }}
+        >
+          <FaPhoneAlt onClick={() => console.log('calls')} />
+          <BsFillPersonFill onClick={() => console.log('addressBook')} />
+          <BiDialpadAlt onClick={() => console.log('dialpad')} />
+          <MdSettings onClick={() => console.log('settings')} />
         </IconContext.Provider>
       </span>
     </footer>
