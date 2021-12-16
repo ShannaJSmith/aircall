@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+// import axios from 'react';
 
 const CallDetails = props => {
   return (
-    <div>
-      
+    <div className="details-container">
+      <p>Call Details</p>
+      <p>DETAILS</p>
+      <p>DETAILS</p>
+      <p>DETAILS</p>
+      <p>DETAILS</p>
+      <p>DETAILS</p>
     </div>
   )
 }
