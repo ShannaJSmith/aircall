@@ -1,9 +1,10 @@
 import React from 'react'
+import { FaPhoneAlt } from 'react-icons/fa';
 
 const Navigation = () => {
   return (
     <footer>
-      <p>📞Navigation</p>
+      <p><FaPhoneAlt /> Navigation</p>
     </footer>
   )
 }
