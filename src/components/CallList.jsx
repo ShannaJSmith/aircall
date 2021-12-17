@@ -8,7 +8,17 @@ import {
 const CallList = ({ data }) => {
   return (
     <div>
-      <p key={data.id}>{data.call_type}</p>
+      <p
+        style={
+          data.call_type === 'missed'
+            ? { color: 'red' }
+            : data.call_type === 'answered'
+            ? { color: 'green' }
+            : null
+        }
+      >
+        {data.call_type}
+      </p>
       {data.direction === 'outbound' ? (
         <BsFillTelephoneOutboundFill />
       ) : (
