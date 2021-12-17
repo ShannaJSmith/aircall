@@ -7,7 +7,7 @@ const CallList = ({ data }) => {
       <p key={data.id}>{data.call_type}</p>
       <p>{data.direction}</p>
       <p>{data.from} called</p>
-      <p>on {data.created_at}</p>
+      <p>at {data.created_at.slice(11, 16)}</p>
     </div>
   )
 }
