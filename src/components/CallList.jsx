@@ -8,23 +8,25 @@ import {
 const CallList = ({ data }) => {
   return (
     <div>
-      <p
-        style={
-          data.call_type === 'missed'
-            ? { color: 'red' }
-            : data.call_type === 'answered'
-            ? { color: 'green' }
-            : null
-        }
-      >
-        {data.call_type}
-      </p>
       {data.direction === 'outbound' ? (
         <BsFillTelephoneOutboundFill />
       ) : (
         <BsFillTelephoneInboundFill />
       )}
-      <p>{data.from} called</p>
+      <div className="calls">
+        <p
+          style={
+            data.call_type === 'missed'
+              ? { color: 'red' }
+              : data.call_type === 'answered'
+              ? { color: 'green' }
+              : null
+          }
+        >
+          {data.call_type}
+        </p>
+        <p>{data.from} called</p>
+      </div>
       <p>at {data.created_at.slice(11, 16)}</p>
     </div>
   )

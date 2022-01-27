@@ -1,7 +1,6 @@
 import React from 'react'
 import CallList from './CallList.jsx'
 import PropTypes from 'prop-types'
-// import axios from 'axios';
 
 const ActivityFeed = ({ callData }) => {
   return (
