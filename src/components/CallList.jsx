@@ -1,40 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  BsFillTelephoneOutboundFill,
-  BsFillTelephoneInboundFill,
-} from 'react-icons/bs'
+import CallListItem from './CallListItem.jsx'
 
-const CallList = ({ data}) => {
-  const [showDetails, setShowDetails] = useState(false)
-
-
+const CallList = ({ callData }) => {
   return (
-    <div className="calls">
-      <p
-        style={
-          data.call_type === 'missed'
-            ? { color: 'red' }
-            : data.call_type === 'answered'
-            ? { color: 'green' }
-            : null
-        }
-      >
-        {data.direction === 'outbound' ? (
-          <BsFillTelephoneOutboundFill />
-        ) : (
-          <BsFillTelephoneInboundFill />
-        )}
-        {data.call_type}
-      </p>
-      <p>{data.from} called</p>
-      <p>at {data.created_at.slice(11, 16)}</p>
+    <div className="details-container">
+      {callData.map((data) => (
+        <CallListItem key={data.id} data={data} />
+      ))}
     </div>
   )
 }
 
 CallList.propTypes = {
-  data: PropTypes.object,
+  callData: PropTypes.array,
 }
 
 export default CallList

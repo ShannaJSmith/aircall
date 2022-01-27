@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import Header from './Header.jsx'
 import Navigation from './components/Navigation.jsx'
-import ActivityFeed from './components/ActivityFeed.jsx'
+import CallList from './components/CallList.jsx'
 
 const App = () => {
   const [callData, setCallData] = useState([
@@ -77,33 +77,17 @@ const App = () => {
     //   },
   ])
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const serverData = await fetchData();
-  //     setCallData(serverData);
-  //   };
-  //   getData();
-
-  // }, []);
-
   useEffect(() => {
     axios
       .get('https://aircall-job.herokuapp.com/activities')
       .then((res) => setCallData(res.data))
   }, [])
 
-  // const fetchData = async () => {
-  //   const res = await fetch('https://aircall-job.herokuapp.com/activities');
-  //   const data = await res.json();
-  //   console.log('data:', data);
-  //   return data;
-  // };
-
   return (
     <div className="container">
       <Header />
       <div className="container-view">Some activities should be here</div>
-      <ActivityFeed callData={callData} />
+      <CallList callData={callData} />
       <Navigation />
     </div>
   )
