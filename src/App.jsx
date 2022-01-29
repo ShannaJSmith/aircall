@@ -6,6 +6,7 @@ import axios from 'axios'
 import Header from './Header.jsx'
 import Navigation from './components/Navigation.jsx'
 import CallList from './components/CallList.jsx'
+import CallDetails from './components/CallDetails.jsx'
 
 const App = () => {
   const [callData, setCallData] = useState([
@@ -88,6 +89,7 @@ const App = () => {
       <Header />
       <div className="container-view">Some activities should be here</div>
       <CallList callData={callData} />
+      <CallDetails />
       <Navigation />
     </div>
   )
